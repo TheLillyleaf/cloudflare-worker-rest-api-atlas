@@ -43,6 +43,8 @@ const worker: ExportedHandler<Bindings> = {
             var user = await App.logIn(credentials);
             var client = user.mongoClient('mongodb-atlas');
         } catch (err) {
+            console.log(err);
+            
             return utils.toError('Error with authentication.', 500);
         }
 
